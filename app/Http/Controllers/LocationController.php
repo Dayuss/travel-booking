@@ -7,6 +7,10 @@ use App\Location;
 
 class LocationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $data = array(
             "page"      => "Lokasi",

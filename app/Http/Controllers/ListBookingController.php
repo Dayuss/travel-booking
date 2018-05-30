@@ -11,6 +11,10 @@ use Auth;
 
 class ListBookingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         if(auth()->user()->isAdmin == 1){
           $booking = DB::table("bookings")

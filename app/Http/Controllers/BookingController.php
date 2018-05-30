@@ -10,6 +10,10 @@ use Auth;
 
 class BookingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index(){
         $data = array(
             "page"      => "Booking",
